@@ -1,46 +1,5 @@
 (function()
 {
-
-	freeboard.loadWidgetPlugin({
-
-		"type_name"   : "LineChart",
-		"display_name": "Line Chart",
-       		"description" : "Historial Line Chart",
-
-		"external_scripts": [
-			"http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
-			"https://rawgit.com/svandecappelle/jQPlot/master/src/core/jquery.jqplot.js",
-			"https://rawgit.com/svandecappelle/jQPlot/master/src/plugins/axis/jqplot.dateAxisRenderer.js"		
-		],
-
-		"fill_size" : true,
-		"settings"    : [
-			{
-				"name": "id",
-				"display_name": "id",
-				"default_value": "chart1",
-				"description": "dom element id of the chart (must be unique for multiple charts)"
-		   	},
-			{
-				"name"        : "res",
-				"display_name": "Response Time",
-				"type"        : "calculated"
-			}
-			{
-             	"name":           "max_points",
-           		"display_name":   "Max Points",
-                "type":           "number",
-                "default_value":  30,
-             }
-		],
-
-
-	newInstance   : function(settings, newInstanceCallback)
-		{
-		newInstanceCallback(new myDatasourcePlugin(settings));
-		}
-	});
-
 	var ChartWidgetPlugin = function(settings) {
 		var self = this;
 		var currentSettings = settings;
@@ -112,7 +71,48 @@
 
 		self.onDispose = function() {
 		}
-	}
+	};
+	
+	freeboard.loadWidgetPlugin({
+
+		"type_name"   : "LineChart",
+		"display_name": "Line Chart",
+       		"description" : "Historial Line Chart",
+
+		"external_scripts": [
+			"http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+			"https://rawgit.com/svandecappelle/jQPlot/master/src/core/jquery.jqplot.js",
+			"https://rawgit.com/svandecappelle/jQPlot/master/src/plugins/axis/jqplot.dateAxisRenderer.js"		
+		],
+
+		"fill_size" : true,
+		"settings"    : [
+			{
+				"name": "id",
+				"display_name": "id",
+				"default_value": "chart1",
+				"description": "dom element id of the chart (must be unique for multiple charts)"
+		   	},
+			{
+				"name"        : "res",
+				"display_name": "Response Time",
+				"type"        : "calculated"
+			}
+			{
+             	"name":           "max_points",
+           		"display_name":   "Max Points",
+                "type":           "number",
+                "default_value":  30,
+             }
+		],
+
+
+	newInstance   : function(settings, newInstanceCallback)
+		{
+		newInstanceCallback(new myDatasourcePlugin(settings));
+		}
+	});
+
 }());
         			
 			
