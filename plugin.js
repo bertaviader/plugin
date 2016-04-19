@@ -14,7 +14,7 @@
 		{
 			$(container).append('<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.8/jquery.jqplot.min.css" />');
 
-			var chartDiv = '<div id="' + currentSettings.id '"</div>';
+			var chartDiv = '<div id="' + currentSettings.id + '"</div>';
 			 htmlElement = $(chartDiv);
       			$(element).append(htmlElement);
 			
@@ -97,13 +97,13 @@
 				"name"        : "res",
 				"display_name": "Response Time",
 				"type"        : "calculated"
-			}
+			},
 			{
-             	"name":           "max_points",
-           		"display_name":   "Max Points",
-                "type":           "number",
-                "default_value":  30,
-             }
+			     	"name":           "max_points",
+			   	"display_name":   "Max Points",
+				"type":           "number",
+				"default_value":  30,
+			     }
 		],
 
 
