@@ -58,7 +58,7 @@
 			if (settingName == 'res') {
 				addSeries(newValue);
 			}
-			$.jqplot(currentSettings.id, [currentData], {
+			$.jqplot('chart1', [currentData], {
 				axes:{
 					xaxis:{
 						renderer:$.jqplot.DateAxisRenderer,
