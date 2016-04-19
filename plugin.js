@@ -48,7 +48,7 @@
 			if(currentData[0] == today) {
 				currentData = [currentData];
 			}
-			var d = [today,dat]
+			var d = [today,dat];
 			currentData.push(d);
 		}
 	
@@ -71,6 +71,8 @@
 
 		self.onDispose = function() {
 		}
+
+		self.onSettingsChanged(settings);
 	};
 	
 	freeboard.loadWidgetPlugin({
